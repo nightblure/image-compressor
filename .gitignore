@@ -6,4 +6,4 @@ rabbitmq/
 redis/
 htmlcov/
 *coverage
-files/*
+files/
