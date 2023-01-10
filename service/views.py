@@ -16,6 +16,9 @@ class Index(web.View):
     # async def post(self):
     #     return await {'title': 'Пишем первое приложение на aiohttp'}
 
+
 class testfile(web.View):
     async def post(self):
-        return web.Response(text='test')
+        return web.json_response({
+            'detail': "test"
+        })

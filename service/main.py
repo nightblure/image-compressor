@@ -3,7 +3,7 @@ import aiohttp_jinja2
 import jinja2
 from aiohttp import web
 
-from service.routes import setup_routes
+from routes import setup_routes
 
 
 def build_app():
@@ -25,14 +25,16 @@ def build_app():
 #     cors.add(route)
 
 
-def main(argv):
+def main(*args):
     app = build_app()
-    web.run_app(app)
+    return app
 
 
 # https://docs.aiohttp.org/en/stable/web_quickstart.html#run-a-simple-web-server
 # CMD RUN COMMAND: python -m aiohttp.web -H localhost -P 8080 service.main:main
 # MAIN URL: http://localhost:8080/
+# RUN WITH DEV-TOOLS (from service directory): adev runserver --app-factory main --port 8080
 if __name__ == '__main__':
-    argv = []
-    main(argv)
+    app = build_app()
+    web.run_app(app)
+

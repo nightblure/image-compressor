@@ -1,7 +1,6 @@
 from aiohttp import web
 
-from service import views
-from service.views import Index, testfile
+from views import Index, testfile
 
 
 def setup_routes(app):
