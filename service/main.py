@@ -7,7 +7,9 @@ from routes import setup_routes
 
 
 def build_app():
-    application = web.Application()
+    # megabytes
+    MAX_MB_FILE_SIZE = 100
+    application = web.Application(client_max_size=1024*1024*MAX_MB_FILE_SIZE)
     aiohttp_jinja2.setup(application, loader=jinja2.FileSystemLoader("templates"))
     setup_routes(application)
     return application
@@ -34,6 +36,7 @@ def main(*args):
 # CMD RUN COMMAND: python -m aiohttp.web -H localhost -P 8080 service.main:main
 # MAIN URL: http://localhost:8080/
 # RUN WITH DEV-TOOLS (from service directory): adev runserver --app-factory main --port 8080
+# RUN TESTS (from root directory): pytest -rs service/tests.py --cov=service
 if __name__ == '__main__':
     app = build_app()
     web.run_app(app)
