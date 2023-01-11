@@ -28,10 +28,18 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/nightblure/Desktop/image compressor/service/files",
+    "last_opened_file_path": "C:/Users/nightblure/Desktop/image compressor/service/templates",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nightblure\Desktop\image compressor\service\templates" />
+      <recent name="C:\Users\nightblure\Desktop\image compressor\service\templates\files" />
+      <recent name="C:\Users\nightblure\Desktop\image compressor\static" />
+      <recent name="C:\Users\nightblure\Desktop\image compressor\service\files" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="image compressor" />

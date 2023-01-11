@@ -1,24 +1,13 @@
 import aiohttp_jinja2
 from aiohttp import web
 
-
-# @aiohttp_jinja2.template("index.html")
-# async def index(request):
-#     return {'title': 'Пишем первое приложение на aiohttp'}
+from file_process import save_file, compress_file
 
 
-class Index(web.View):
-
-    @aiohttp_jinja2.template("index.html")
-    async def get(self):
-        return {'title': 'test'} # web.Response(text='ЭЩКЕРЕЕ')
-
-    # async def post(self):
-    #     return await {'title': 'Пишем первое приложение на aiohttp'}
-
-
-class testfile(web.View):
+class CompressImageView(web.View):
     async def post(self):
-        return web.json_response({
-            'detail': "test"
-        })
+        return await compress_file(self.request)
+
+    @aiohttp_jinja2.template('compress_page.html')
+    async def get(self):
+        pass

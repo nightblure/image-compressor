@@ -4,14 +4,19 @@ import jinja2
 from aiohttp import web
 
 from routes import setup_routes
+import settings
 
 
 def build_app():
     # megabytes
     MAX_MB_FILE_SIZE = 100
     application = web.Application(client_max_size=1024*1024*MAX_MB_FILE_SIZE)
-    aiohttp_jinja2.setup(application, loader=jinja2.FileSystemLoader("templates"))
+
+    application['static_root_url'] = '/files'
+    application.add_routes([web.static('/files', settings.SERVICE_FILES_DIR)])
+
     setup_routes(application)
+    aiohttp_jinja2.setup(application, loader=jinja2.FileSystemLoader("templates"))
     return application
 
 

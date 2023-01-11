@@ -1,12 +1,12 @@
 from aiohttp import web
 
-from views import Index, testfile
-from file_loader import save_file
+import settings
+from views import CompressImageView
 
 
 def setup_routes(app):
     routes = [
-        web.get('/', Index),
-        web.post('/test/', save_file)
+        web.get('/', CompressImageView),
+        web.post('/compress/', CompressImageView, name='compress_route'),
     ]
     app.add_routes(routes)
